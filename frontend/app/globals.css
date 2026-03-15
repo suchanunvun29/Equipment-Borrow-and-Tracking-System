@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: 24 95% 53%; /* #EA580C */
+  --primary-dark: 20 91% 38%; /* #9A3412 */
+  --primary-light: 25 95% 44%; /* #C2410C */
+  --accent: 38 92% 50%; /* #F59E0B */
+  --surface: 30 100% 98%; /* #FFF7ED */
+  --sidebar: 16 71% 26%; /* #7C2D12 */
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-slate-900;
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md border border-white/40 shadow-xl shadow-orange-900/5;
+  }
+
+  .premium-shadow {
+    @apply shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(154,52,18,0.12)] transition-shadow duration-300;
+  }
+
+  .nav-active {
+    @apply bg-orange-700/80 text-white shadow-lg shadow-orange-950/20;
+  }
+}

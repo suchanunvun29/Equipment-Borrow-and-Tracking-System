@@ -1,0 +1,4 @@
+interface:
+  display_name: "Equipment Borrow Rules"
+  short_description: "Enforce project UI and data rules for Equipment Borrow system"
+  default_prompt: "Apply project constraints: table views, modal popup forms, Thai Buddhist calendar, no mock data, detailed logs, Thai-only documents/comments, and warm-tone UI theme."

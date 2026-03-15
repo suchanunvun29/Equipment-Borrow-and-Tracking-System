@@ -1,0 +1,10 @@
+﻿# Node
+frontend/node_modules
+frontend/.next
+
+# .NET
+**/bin
+**/obj
+
+# Env
+**/.env.local

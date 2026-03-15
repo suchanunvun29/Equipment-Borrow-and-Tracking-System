@@ -1,0 +1,18 @@
+ ⨯ ./components/ui/Table.tsx
+Error: Failed to read source code from D:\source\source\repos\tanakongsengwan\Equipment Borrow & Tracking System\frontend\components\ui\Table.tsx
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Import trace for requested module:
+./components/ui/Table.tsx
+./app/(dashboard)/return/page.tsx
+ ⨯ ./components/ui/Table.tsx
+Error: Failed to read source code from D:\source\source\repos\tanakongsengwan\Equipment Borrow & Tracking System\frontend\components\ui\Table.tsx
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Import trace for requested module:
+./components/ui/Table.tsx
+./app/(dashboard)/return/page.tsx

@@ -1,0 +1,1991 @@
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "MigrationId", "ProductVersion"
+      FROM "__EFMigrationsHistory"
+      ORDER BY "MigrationId";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+          "MigrationId" character varying(150) NOT NULL,
+          "ProductVersion" character varying(32) NOT NULL,
+          CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
+      );
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "MigrationId", "ProductVersion"
+      FROM "__EFMigrationsHistory"
+      ORDER BY "MigrationId";
+info: Microsoft.EntityFrameworkCore.Migrations[20405]
+      No migrations were applied. The database is already up to date.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE IF NOT EXISTS "SystemUsageLogs" (
+    "Id" uuid NOT NULL,
+    "UserId" uuid NULL,
+    "Username" text NOT NULL,
+    "Role" text NOT NULL,
+    "Method" text NOT NULL,
+    "Path" text NOT NULL,
+    "StatusCode" integer NOT NULL,
+    "DurationMs" bigint NOT NULL,
+    "Detail" text NULL,
+    "CreatedAt" timestamp with time zone NOT NULL,
+    CONSTRAINT "PK_SystemUsageLogs" PRIMARY KEY ("Id")
+);
+CREATE INDEX IF NOT EXISTS "IX_SystemUsageLogs_CreatedAt" ON "SystemUsageLogs" ("CreatedAt");
+CREATE INDEX IF NOT EXISTS "IX_SystemUsageLogs_Username" ON "SystemUsageLogs" ("Username");
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT u."Id", u."CreatedAt", u."Department", u."EmployeeCode", u."FullName", u."IsActive", u."Password", u."Role", u."UpdatedAt", u."Username"
+      FROM "Users" AS u
+      WHERE u."Username" = 'admin'
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT u."Id", u."CreatedAt", u."Department", u."EmployeeCode", u."FullName", u."IsActive", u."Password", u."Role", u."UpdatedAt", u."Username"
+      FROM "Users" AS u
+      WHERE u."Username" = 'staff01'
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT u."Id", u."CreatedAt", u."Department", u."EmployeeCode", u."FullName", u."IsActive", u."Password", u."Role", u."UpdatedAt", u."Username"
+      FROM "Users" AS u
+      WHERE u."Username" = 'staff02'
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."CreatedAt", e."Description", e."Name"
+      FROM "EquipmentCategories" AS e
+      WHERE e."Name" = 'โน้ตบุ๊ก'
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."CreatedAt", e."Description", e."Name"
+      FROM "EquipmentCategories" AS e
+      WHERE e."Name" = 'อุปกรณ์เครือข่าย'
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."CreatedAt", e."Description", e."Name"
+      FROM "EquipmentCategories" AS e
+      WHERE e."Name" = 'จอภาพ'
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."CreatedAt", e."Description", e."Name"
+      FROM "EquipmentCategories" AS e
+      WHERE e."Name" = 'อุปกรณ์เสริม'
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."AvailableQty", e."CategoryId", e."Code", e."CreatedAt", e."Description", e."Model", e."Name", e."Status", e."TotalQuantity", e."UpdatedAt"
+      FROM "Equipment" AS e
+      WHERE e."Code" = 'IT-LPT-001'
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."AvailableQty", e."CategoryId", e."Code", e."CreatedAt", e."Description", e."Model", e."Name", e."Status", e."TotalQuantity", e."UpdatedAt"
+      FROM "Equipment" AS e
+      WHERE e."Code" = 'IT-NET-001'
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."AvailableQty", e."CategoryId", e."Code", e."CreatedAt", e."Description", e."Model", e."Name", e."Status", e."TotalQuantity", e."UpdatedAt"
+      FROM "Equipment" AS e
+      WHERE e."Code" = 'IT-MON-001'
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."AvailableQty", e."CategoryId", e."Code", e."CreatedAt", e."Description", e."Model", e."Name", e."Status", e."TotalQuantity", e."UpdatedAt"
+      FROM "Equipment" AS e
+      WHERE e."Code" = 'IT-MON-002'
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."AvailableQty", e."CategoryId", e."Code", e."CreatedAt", e."Description", e."Model", e."Name", e."Status", e."TotalQuantity", e."UpdatedAt"
+      FROM "Equipment" AS e
+      WHERE e."Code" = 'IT-ACC-001'
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT b."Id", b."ApprovedAt", b."ApprovedBy", b."BorrowDate", b."BorrowerId", b."CreatedAt", b."EquipmentId", b."ExpectedReturn", b."Notes", b."RequestCode", b."Status", b."UpdatedAt"
+      FROM "BorrowRequests" AS b
+      WHERE b."RequestCode" = 'BRW-20260301-001'
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (12ms) [Parameters=[@__borrowReturned_Id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+      SELECT r."Id", r."ApprovedBy", r."BorrowId", r."ConditionNote", r."CreatedAt", r."ReturnDate", r."ReturnReason", r."ReturnedBy"
+      FROM "ReturnRecords" AS r
+      WHERE r."BorrowId" = @__borrowReturned_Id_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT b."Id", b."ApprovedAt", b."ApprovedBy", b."BorrowDate", b."BorrowerId", b."CreatedAt", b."EquipmentId", b."ExpectedReturn", b."Notes", b."RequestCode", b."Status", b."UpdatedAt"
+      FROM "BorrowRequests" AS b
+      WHERE b."RequestCode" = 'BRW-20260301-002'
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT b."Id", b."ApprovedAt", b."ApprovedBy", b."BorrowDate", b."BorrowerId", b."CreatedAt", b."EquipmentId", b."ExpectedReturn", b."Notes", b."RequestCode", b."Status", b."UpdatedAt"
+      FROM "BorrowRequests" AS b
+      WHERE b."RequestCode" = 'BRW-20260301-003'
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT b."Id", b."ApprovedAt", b."ApprovedBy", b."BorrowDate", b."BorrowerId", b."CreatedAt", b."EquipmentId", b."ExpectedReturn", b."Notes", b."RequestCode", b."Status", b."UpdatedAt"
+      FROM "BorrowRequests" AS b
+      WHERE b."RequestCode" = 'BRW-20260301-004'
+      LIMIT 1
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5000
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\source\repos\tanakongsengwan\Equipment Borrow & Tracking System\backend\EquipmentBorrow.API
+info: EquipmentBorrow.API.Services.AuthService[0]
+      เริ่มเข้าสู่ระบบ Username=admin
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[@__dto_Username_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT u."Id", u."CreatedAt", u."Department", u."EmployeeCode", u."FullName", u."IsActive", u."Password", u."Role", u."UpdatedAt", u."Username"
+      FROM "Users" AS u
+      WHERE u."Username" = @__dto_Username_0 AND u."IsActive"
+      LIMIT 1
+info: EquipmentBorrow.API.Services.AuthService[0]
+      เข้าสู่ระบบสำเร็จ UserId=2e63c50c-dc41-4d7f-8fc2-b0822841bbd7 Role=admin
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.SystemUsageLogService[0]
+      เริ่มดึงประวัติการใช้งานระบบ Limit=3
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT s."Id", s."UserId", s."Username", s."Role", s."Method", s."Path", s."StatusCode", s."DurationMs", s."Detail", s."CreatedAt"
+      FROM "SystemUsageLogs" AS s
+      ORDER BY s."CreatedAt" DESC
+      LIMIT @__p_0
+info: EquipmentBorrow.API.Services.SystemUsageLogService[0]
+      ดึงประวัติการใช้งานระบบสำเร็จ Count=3
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.SystemUsageLogService[0]
+      เริ่มดึงประวัติการใช้งานระบบ Limit=300
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT s."Id", s."UserId", s."Username", s."Role", s."Method", s."Path", s."StatusCode", s."DurationMs", s."Detail", s."CreatedAt"
+      FROM "SystemUsageLogs" AS s
+      ORDER BY s."CreatedAt" DESC
+      LIMIT @__p_0
+info: EquipmentBorrow.API.Services.SystemUsageLogService[0]
+      ดึงประวัติการใช้งานระบบสำเร็จ Count=30
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.SystemUsageLogService[0]
+      เริ่มดึงประวัติการใช้งานระบบ Limit=300
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT s."Id", s."UserId", s."Username", s."Role", s."Method", s."Path", s."StatusCode", s."DurationMs", s."Detail", s."CreatedAt"
+      FROM "SystemUsageLogs" AS s
+      ORDER BY s."CreatedAt" DESC
+      LIMIT @__p_0
+info: EquipmentBorrow.API.Services.SystemUsageLogService[0]
+      ดึงประวัติการใช้งานระบบสำเร็จ Count=31
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.SystemUsageLogService[0]
+      เริ่มดึงประวัติการใช้งานระบบ Limit=300
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT s."Id", s."UserId", s."Username", s."Role", s."Method", s."Path", s."StatusCode", s."DurationMs", s."Detail", s."CreatedAt"
+      FROM "SystemUsageLogs" AS s
+      ORDER BY s."CreatedAt" DESC
+      LIMIT @__p_0
+info: EquipmentBorrow.API.Services.SystemUsageLogService[0]
+      ดึงประวัติการใช้งานระบบสำเร็จ Count=32
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.SystemUsageLogService[0]
+      เริ่มดึงประวัติการใช้งานระบบ Limit=300
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT s."Id", s."UserId", s."Username", s."Role", s."Method", s."Path", s."StatusCode", s."DurationMs", s."Detail", s."CreatedAt"
+      FROM "SystemUsageLogs" AS s
+      ORDER BY s."CreatedAt" DESC
+      LIMIT @__p_0
+info: EquipmentBorrow.API.Services.SystemUsageLogService[0]
+      ดึงประวัติการใช้งานระบบสำเร็จ Count=33
+info: EquipmentBorrow.API.Services.SystemUsageLogService[0]
+      เริ่มดึงประวัติการใช้งานระบบ Limit=300
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (11ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT s."Id", s."UserId", s."Username", s."Role", s."Method", s."Path", s."StatusCode", s."DurationMs", s."Detail", s."CreatedAt"
+      FROM "SystemUsageLogs" AS s
+      ORDER BY s."CreatedAt" DESC
+      LIMIT @__p_0
+info: EquipmentBorrow.API.Services.SystemUsageLogService[0]
+      ดึงประวัติการใช้งานระบบสำเร็จ Count=34
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.SystemUsageLogService[0]
+      เริ่มดึงประวัติการใช้งานระบบ Limit=300
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT s."Id", s."UserId", s."Username", s."Role", s."Method", s."Path", s."StatusCode", s."DurationMs", s."Detail", s."CreatedAt"
+      FROM "SystemUsageLogs" AS s
+      ORDER BY s."CreatedAt" DESC
+      LIMIT @__p_0
+info: EquipmentBorrow.API.Services.SystemUsageLogService[0]
+      ดึงประวัติการใช้งานระบบสำเร็จ Count=35
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.SystemUsageLogService[0]
+      เริ่มดึงประวัติการใช้งานระบบ Limit=300
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT s."Id", s."UserId", s."Username", s."Role", s."Method", s."Path", s."StatusCode", s."DurationMs", s."Detail", s."CreatedAt"
+      FROM "SystemUsageLogs" AS s
+      ORDER BY s."CreatedAt" DESC
+      LIMIT @__p_0
+info: EquipmentBorrow.API.Services.SystemUsageLogService[0]
+      ดึงประวัติการใช้งานระบบสำเร็จ Count=36
+info: EquipmentBorrow.API.Services.SystemUsageLogService[0]
+      เริ่มดึงประวัติการใช้งานระบบ Limit=300
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT s."Id", s."UserId", s."Username", s."Role", s."Method", s."Path", s."StatusCode", s."DurationMs", s."Detail", s."CreatedAt"
+      FROM "SystemUsageLogs" AS s
+      ORDER BY s."CreatedAt" DESC
+      LIMIT @__p_0
+info: EquipmentBorrow.API.Services.SystemUsageLogService[0]
+      ดึงประวัติการใช้งานระบบสำเร็จ Count=37
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      เริ่มดึงรายการพนักงาน
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT u."Id", u."Username", u."FullName", u."EmployeeCode", u."Department", u."Role"
+      FROM "Users" AS u
+      WHERE u."IsActive"
+      ORDER BY u."FullName"
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      ดึงรายการพนักงานสำเร็จ Count=3
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      เริ่มดึงรายการพนักงาน
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT u."Id", u."Username", u."FullName", u."EmployeeCode", u."Department", u."Role"
+      FROM "Users" AS u
+      WHERE u."IsActive"
+      ORDER BY u."FullName"
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      ดึงรายการพนักงานสำเร็จ Count=3
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (29ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: EquipmentBorrow.API.Services.BorrowService[0]
+      เริ่มดึงรายการยืม Role=admin UserId=2e63c50c-dc41-4d7f-8fc2-b0822841bbd7
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT b."Id", b."RequestCode", u."FullName" AS "Borrower", e."Name" AS "EquipmentName", b."BorrowDate", b."ExpectedReturn", b."Status", b."Notes", b."ApprovedAt", r."ReturnDate", r."ReturnReason", r."ConditionNote"
+      FROM "BorrowRequests" AS b
+      INNER JOIN "Users" AS u ON b."BorrowerId" = u."Id"
+      INNER JOIN "Equipment" AS e ON b."EquipmentId" = e."Id"
+      LEFT JOIN "ReturnRecords" AS r ON b."Id" = r."BorrowId"
+      ORDER BY b."CreatedAt" DESC
+info: EquipmentBorrow.API.Services.BorrowService[0]
+      ดึงรายการยืมสำเร็จ Count=5
+info: EquipmentBorrow.API.Services.BorrowService[0]
+      เริ่มดึงรายการยืม Role=admin UserId=2e63c50c-dc41-4d7f-8fc2-b0822841bbd7
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT b."Id", b."RequestCode", u."FullName" AS "Borrower", e."Name" AS "EquipmentName", b."BorrowDate", b."ExpectedReturn", b."Status", b."Notes", b."ApprovedAt", r."ReturnDate", r."ReturnReason", r."ConditionNote"
+      FROM "BorrowRequests" AS b
+      INNER JOIN "Users" AS u ON b."BorrowerId" = u."Id"
+      INNER JOIN "Equipment" AS e ON b."EquipmentId" = e."Id"
+      LEFT JOIN "ReturnRecords" AS r ON b."Id" = r."BorrowId"
+      ORDER BY b."CreatedAt" DESC
+info: EquipmentBorrow.API.Services.BorrowService[0]
+      ดึงรายการยืมสำเร็จ Count=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      เริ่มดึงรายการพนักงาน
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT u."Id", u."Username", u."FullName", u."EmployeeCode", u."Department", u."Role"
+      FROM "Users" AS u
+      WHERE u."IsActive"
+      ORDER BY u."FullName"
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      ดึงรายการพนักงานสำเร็จ Count=3
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      เริ่มดึงรายการพนักงาน
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.ReturnService[0]
+      เริ่มดึงรายการรอคืนอุปกรณ์
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT u."Id", u."Username", u."FullName", u."EmployeeCode", u."Department", u."Role"
+      FROM "Users" AS u
+      WHERE u."IsActive"
+      ORDER BY u."FullName"
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      ดึงรายการพนักงานสำเร็จ Count=3
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT b."Id", b."RequestCode", b."BorrowerId", u."FullName" AS "Borrower", e."Name" AS "EquipmentName", b."BorrowDate", b."ExpectedReturn", b."Status"
+      FROM "BorrowRequests" AS b
+      INNER JOIN "Users" AS u ON b."BorrowerId" = u."Id"
+      INNER JOIN "Equipment" AS e ON b."EquipmentId" = e."Id"
+      WHERE b."Status" = 'approved'
+      ORDER BY b."BorrowDate"
+info: EquipmentBorrow.API.Services.ReturnService[0]
+      ดึงรายการรอคืนสำเร็จ Count=0
+info: EquipmentBorrow.API.Services.ReturnService[0]
+      เริ่มดึงรายการรอคืนอุปกรณ์
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT b."Id", b."RequestCode", b."BorrowerId", u."FullName" AS "Borrower", e."Name" AS "EquipmentName", b."BorrowDate", b."ExpectedReturn", b."Status"
+      FROM "BorrowRequests" AS b
+      INNER JOIN "Users" AS u ON b."BorrowerId" = u."Id"
+      INNER JOIN "Equipment" AS e ON b."EquipmentId" = e."Id"
+      WHERE b."Status" = 'approved'
+      ORDER BY b."BorrowDate"
+info: EquipmentBorrow.API.Services.ReturnService[0]
+      ดึงรายการรอคืนสำเร็จ Count=0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.ReturnService[0]
+      เริ่มดึงรายการค้างคืนของพนักงาน EmployeeId=61bcf61a-6559-41a0-9021-45831f9fdcc2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@__employeeId_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+      SELECT b."Id", b."RequestCode", b."BorrowerId", u."FullName" AS "Borrower", e."Name" AS "EquipmentName", b."BorrowDate", b."ExpectedReturn", b."Status"
+      FROM "BorrowRequests" AS b
+      INNER JOIN "Users" AS u ON b."BorrowerId" = u."Id"
+      INNER JOIN "Equipment" AS e ON b."EquipmentId" = e."Id"
+      WHERE b."BorrowerId" = @__employeeId_0 AND b."Status" = 'approved'
+      ORDER BY b."BorrowDate"
+info: EquipmentBorrow.API.Services.ReturnService[0]
+      ดึงรายการค้างคืนสำเร็จ EmployeeId=61bcf61a-6559-41a0-9021-45831f9fdcc2 Count=0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: EquipmentBorrow.API.Services.BorrowService[0]
+      เริ่มดึงรายการยืม Role=admin UserId=2e63c50c-dc41-4d7f-8fc2-b0822841bbd7
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT b."Id", b."RequestCode", u."FullName" AS "Borrower", e."Name" AS "EquipmentName", b."BorrowDate", b."ExpectedReturn", b."Status", b."Notes", b."ApprovedAt", r."ReturnDate", r."ReturnReason", r."ConditionNote"
+      FROM "BorrowRequests" AS b
+      INNER JOIN "Users" AS u ON b."BorrowerId" = u."Id"
+      INNER JOIN "Equipment" AS e ON b."EquipmentId" = e."Id"
+      LEFT JOIN "ReturnRecords" AS r ON b."Id" = r."BorrowId"
+      ORDER BY b."CreatedAt" DESC
+info: EquipmentBorrow.API.Services.BorrowService[0]
+      ดึงรายการยืมสำเร็จ Count=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.BorrowService[0]
+      เริ่มดึงรายการยืม Role=admin UserId=2e63c50c-dc41-4d7f-8fc2-b0822841bbd7
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT b."Id", b."RequestCode", u."FullName" AS "Borrower", e."Name" AS "EquipmentName", b."BorrowDate", b."ExpectedReturn", b."Status", b."Notes", b."ApprovedAt", r."ReturnDate", r."ReturnReason", r."ConditionNote"
+      FROM "BorrowRequests" AS b
+      INNER JOIN "Users" AS u ON b."BorrowerId" = u."Id"
+      INNER JOIN "Equipment" AS e ON b."EquipmentId" = e."Id"
+      LEFT JOIN "ReturnRecords" AS r ON b."Id" = r."BorrowId"
+      ORDER BY b."CreatedAt" DESC
+info: EquipmentBorrow.API.Services.BorrowService[0]
+      ดึงรายการยืมสำเร็จ Count=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (10ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      เริ่มดึงรายการพนักงาน
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT u."Id", u."Username", u."FullName", u."EmployeeCode", u."Department", u."Role"
+      FROM "Users" AS u
+      WHERE u."IsActive"
+      ORDER BY u."FullName"
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      ดึงรายการพนักงานสำเร็จ Count=3
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      เริ่มดึงรายการพนักงาน
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT u."Id", u."Username", u."FullName", u."EmployeeCode", u."Department", u."Role"
+      FROM "Users" AS u
+      WHERE u."IsActive"
+      ORDER BY u."FullName"
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      ดึงรายการพนักงานสำเร็จ Count=3
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.ReportService[0]
+      เริ่มรายงานอุปกรณ์เกินกำหนด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[@__today_0='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT b."Id", b."RequestCode", u."FullName" AS "Borrower", e."Name" AS "EquipmentName", b."BorrowDate", b."ExpectedReturn", b."Status"
+      FROM "BorrowRequests" AS b
+      INNER JOIN "Users" AS u ON b."BorrowerId" = u."Id"
+      INNER JOIN "Equipment" AS e ON b."EquipmentId" = e."Id"
+      WHERE b."Status" = 'approved' AND b."ExpectedReturn" IS NOT NULL AND b."ExpectedReturn" < @__today_0
+      ORDER BY b."ExpectedReturn"
+info: EquipmentBorrow.API.Services.ReportService[0]
+      รายงานเกินกำหนดสำเร็จ Count=0
+info: EquipmentBorrow.API.Services.ReportService[0]
+      เริ่มรายงานอุปกรณ์เกินกำหนด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[@__today_0='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT b."Id", b."RequestCode", u."FullName" AS "Borrower", e."Name" AS "EquipmentName", b."BorrowDate", b."ExpectedReturn", b."Status"
+      FROM "BorrowRequests" AS b
+      INNER JOIN "Users" AS u ON b."BorrowerId" = u."Id"
+      INNER JOIN "Equipment" AS e ON b."EquipmentId" = e."Id"
+      WHERE b."Status" = 'approved' AND b."ExpectedReturn" IS NOT NULL AND b."ExpectedReturn" < @__today_0
+      ORDER BY b."ExpectedReturn"
+info: EquipmentBorrow.API.Services.ReportService[0]
+      รายงานเกินกำหนดสำเร็จ Count=0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.SystemUsageLogService[0]
+      เริ่มดึงประวัติการใช้งานระบบ Limit=300
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT s."Id", s."UserId", s."Username", s."Role", s."Method", s."Path", s."StatusCode", s."DurationMs", s."Detail", s."CreatedAt"
+      FROM "SystemUsageLogs" AS s
+      ORDER BY s."CreatedAt" DESC
+      LIMIT @__p_0
+info: EquipmentBorrow.API.Services.SystemUsageLogService[0]
+      ดึงประวัติการใช้งานระบบสำเร็จ Count=75
+info: EquipmentBorrow.API.Services.SystemUsageLogService[0]
+      เริ่มดึงประวัติการใช้งานระบบ Limit=300
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT s."Id", s."UserId", s."Username", s."Role", s."Method", s."Path", s."StatusCode", s."DurationMs", s."Detail", s."CreatedAt"
+      FROM "SystemUsageLogs" AS s
+      ORDER BY s."CreatedAt" DESC
+      LIMIT @__p_0
+info: EquipmentBorrow.API.Services.SystemUsageLogService[0]
+      ดึงประวัติการใช้งานระบบสำเร็จ Count=75
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.BorrowService[0]
+      เริ่มดึงรายการยืม Role=admin UserId=2e63c50c-dc41-4d7f-8fc2-b0822841bbd7
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT b."Id", b."RequestCode", u."FullName" AS "Borrower", e."Name" AS "EquipmentName", b."BorrowDate", b."ExpectedReturn", b."Status", b."Notes", b."ApprovedAt", r."ReturnDate", r."ReturnReason", r."ConditionNote"
+      FROM "BorrowRequests" AS b
+      INNER JOIN "Users" AS u ON b."BorrowerId" = u."Id"
+      INNER JOIN "Equipment" AS e ON b."EquipmentId" = e."Id"
+      LEFT JOIN "ReturnRecords" AS r ON b."Id" = r."BorrowId"
+      ORDER BY b."CreatedAt" DESC
+info: EquipmentBorrow.API.Services.BorrowService[0]
+      ดึงรายการยืมสำเร็จ Count=5
+info: EquipmentBorrow.API.Services.BorrowService[0]
+      เริ่มดึงรายการยืม Role=admin UserId=2e63c50c-dc41-4d7f-8fc2-b0822841bbd7
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT b."Id", b."RequestCode", u."FullName" AS "Borrower", e."Name" AS "EquipmentName", b."BorrowDate", b."ExpectedReturn", b."Status", b."Notes", b."ApprovedAt", r."ReturnDate", r."ReturnReason", r."ConditionNote"
+      FROM "BorrowRequests" AS b
+      INNER JOIN "Users" AS u ON b."BorrowerId" = u."Id"
+      INNER JOIN "Equipment" AS e ON b."EquipmentId" = e."Id"
+      LEFT JOIN "ReturnRecords" AS r ON b."Id" = r."BorrowId"
+      ORDER BY b."CreatedAt" DESC
+info: EquipmentBorrow.API.Services.BorrowService[0]
+      ดึงรายการยืมสำเร็จ Count=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.ReturnService[0]
+      เริ่มดึงรายการรอคืนอุปกรณ์
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      เริ่มดึงรายการพนักงาน
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT u."Id", u."Username", u."FullName", u."EmployeeCode", u."Department", u."Role"
+      FROM "Users" AS u
+      WHERE u."IsActive"
+      ORDER BY u."FullName"
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      ดึงรายการพนักงานสำเร็จ Count=3
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT b."Id", b."RequestCode", b."BorrowerId", u."FullName" AS "Borrower", e."Name" AS "EquipmentName", b."BorrowDate", b."ExpectedReturn", b."Status"
+      FROM "BorrowRequests" AS b
+      INNER JOIN "Users" AS u ON b."BorrowerId" = u."Id"
+      INNER JOIN "Equipment" AS e ON b."EquipmentId" = e."Id"
+      WHERE b."Status" = 'approved'
+      ORDER BY b."BorrowDate"
+info: EquipmentBorrow.API.Services.ReturnService[0]
+      ดึงรายการรอคืนสำเร็จ Count=0
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      เริ่มดึงรายการพนักงาน
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT u."Id", u."Username", u."FullName", u."EmployeeCode", u."Department", u."Role"
+      FROM "Users" AS u
+      WHERE u."IsActive"
+      ORDER BY u."FullName"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      ดึงรายการพนักงานสำเร็จ Count=3
+info: EquipmentBorrow.API.Services.ReturnService[0]
+      เริ่มดึงรายการรอคืนอุปกรณ์
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT b."Id", b."RequestCode", b."BorrowerId", u."FullName" AS "Borrower", e."Name" AS "EquipmentName", b."BorrowDate", b."ExpectedReturn", b."Status"
+      FROM "BorrowRequests" AS b
+      INNER JOIN "Users" AS u ON b."BorrowerId" = u."Id"
+      INNER JOIN "Equipment" AS e ON b."EquipmentId" = e."Id"
+      WHERE b."Status" = 'approved'
+      ORDER BY b."BorrowDate"
+info: EquipmentBorrow.API.Services.ReturnService[0]
+      ดึงรายการรอคืนสำเร็จ Count=0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.BorrowService[0]
+      เริ่มดึงรายการยืม Role=admin UserId=2e63c50c-dc41-4d7f-8fc2-b0822841bbd7
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT b."Id", b."RequestCode", u."FullName" AS "Borrower", e."Name" AS "EquipmentName", b."BorrowDate", b."ExpectedReturn", b."Status", b."Notes", b."ApprovedAt", r."ReturnDate", r."ReturnReason", r."ConditionNote"
+      FROM "BorrowRequests" AS b
+      INNER JOIN "Users" AS u ON b."BorrowerId" = u."Id"
+      INNER JOIN "Equipment" AS e ON b."EquipmentId" = e."Id"
+      LEFT JOIN "ReturnRecords" AS r ON b."Id" = r."BorrowId"
+      ORDER BY b."CreatedAt" DESC
+info: EquipmentBorrow.API.Services.BorrowService[0]
+      ดึงรายการยืมสำเร็จ Count=5
+info: EquipmentBorrow.API.Services.BorrowService[0]
+      เริ่มดึงรายการยืม Role=admin UserId=2e63c50c-dc41-4d7f-8fc2-b0822841bbd7
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT b."Id", b."RequestCode", u."FullName" AS "Borrower", e."Name" AS "EquipmentName", b."BorrowDate", b."ExpectedReturn", b."Status", b."Notes", b."ApprovedAt", r."ReturnDate", r."ReturnReason", r."ConditionNote"
+      FROM "BorrowRequests" AS b
+      INNER JOIN "Users" AS u ON b."BorrowerId" = u."Id"
+      INNER JOIN "Equipment" AS e ON b."EquipmentId" = e."Id"
+      LEFT JOIN "ReturnRecords" AS r ON b."Id" = r."BorrowId"
+      ORDER BY b."CreatedAt" DESC
+info: EquipmentBorrow.API.Services.BorrowService[0]
+      ดึงรายการยืมสำเร็จ Count=5
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      เริ่มดึงรายการพนักงาน
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT u."Id", u."Username", u."FullName", u."EmployeeCode", u."Department", u."Role"
+      FROM "Users" AS u
+      WHERE u."IsActive"
+      ORDER BY u."FullName"
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      ดึงรายการพนักงานสำเร็จ Count=3
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      เริ่มดึงรายการพนักงาน
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT u."Id", u."Username", u."FullName", u."EmployeeCode", u."Department", u."Role"
+      FROM "Users" AS u
+      WHERE u."IsActive"
+      ORDER BY u."FullName"
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      ดึงรายการพนักงานสำเร็จ Count=3
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.BorrowService[0]
+      เริ่มดึงรายการยืม Role=admin UserId=2e63c50c-dc41-4d7f-8fc2-b0822841bbd7
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT b."Id", b."RequestCode", u."FullName" AS "Borrower", e."Name" AS "EquipmentName", b."BorrowDate", b."ExpectedReturn", b."Status", b."Notes", b."ApprovedAt", r."ReturnDate", r."ReturnReason", r."ConditionNote"
+      FROM "BorrowRequests" AS b
+      INNER JOIN "Users" AS u ON b."BorrowerId" = u."Id"
+      INNER JOIN "Equipment" AS e ON b."EquipmentId" = e."Id"
+      LEFT JOIN "ReturnRecords" AS r ON b."Id" = r."BorrowId"
+      ORDER BY b."CreatedAt" DESC
+info: EquipmentBorrow.API.Services.BorrowService[0]
+      ดึงรายการยืมสำเร็จ Count=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: EquipmentBorrow.API.Services.BorrowService[0]
+      เริ่มดึงรายการยืม Role=admin UserId=2e63c50c-dc41-4d7f-8fc2-b0822841bbd7
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT b."Id", b."RequestCode", u."FullName" AS "Borrower", e."Name" AS "EquipmentName", b."BorrowDate", b."ExpectedReturn", b."Status", b."Notes", b."ApprovedAt", r."ReturnDate", r."ReturnReason", r."ConditionNote"
+      FROM "BorrowRequests" AS b
+      INNER JOIN "Users" AS u ON b."BorrowerId" = u."Id"
+      INNER JOIN "Equipment" AS e ON b."EquipmentId" = e."Id"
+      LEFT JOIN "ReturnRecords" AS r ON b."Id" = r."BorrowId"
+      ORDER BY b."CreatedAt" DESC
+info: EquipmentBorrow.API.Services.BorrowService[0]
+      ดึงรายการยืมสำเร็จ Count=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.ReturnService[0]
+      เริ่มดึงรายการรอคืนอุปกรณ์
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      เริ่มดึงรายการพนักงาน
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT u."Id", u."Username", u."FullName", u."EmployeeCode", u."Department", u."Role"
+      FROM "Users" AS u
+      WHERE u."IsActive"
+      ORDER BY u."FullName"
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      ดึงรายการพนักงานสำเร็จ Count=3
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT b."Id", b."RequestCode", b."BorrowerId", u."FullName" AS "Borrower", e."Name" AS "EquipmentName", b."BorrowDate", b."ExpectedReturn", b."Status"
+      FROM "BorrowRequests" AS b
+      INNER JOIN "Users" AS u ON b."BorrowerId" = u."Id"
+      INNER JOIN "Equipment" AS e ON b."EquipmentId" = e."Id"
+      WHERE b."Status" = 'approved'
+      ORDER BY b."BorrowDate"
+info: EquipmentBorrow.API.Services.ReturnService[0]
+      ดึงรายการรอคืนสำเร็จ Count=0
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      เริ่มดึงรายการพนักงาน
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.ReturnService[0]
+      เริ่มดึงรายการรอคืนอุปกรณ์
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT u."Id", u."Username", u."FullName", u."EmployeeCode", u."Department", u."Role"
+      FROM "Users" AS u
+      WHERE u."IsActive"
+      ORDER BY u."FullName"
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      ดึงรายการพนักงานสำเร็จ Count=3
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT b."Id", b."RequestCode", b."BorrowerId", u."FullName" AS "Borrower", e."Name" AS "EquipmentName", b."BorrowDate", b."ExpectedReturn", b."Status"
+      FROM "BorrowRequests" AS b
+      INNER JOIN "Users" AS u ON b."BorrowerId" = u."Id"
+      INNER JOIN "Equipment" AS e ON b."EquipmentId" = e."Id"
+      WHERE b."Status" = 'approved'
+      ORDER BY b."BorrowDate"
+info: EquipmentBorrow.API.Services.ReturnService[0]
+      ดึงรายการรอคืนสำเร็จ Count=0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.BorrowService[0]
+      เริ่มดึงรายการยืม Role=admin UserId=2e63c50c-dc41-4d7f-8fc2-b0822841bbd7
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT b."Id", b."RequestCode", u."FullName" AS "Borrower", e."Name" AS "EquipmentName", b."BorrowDate", b."ExpectedReturn", b."Status", b."Notes", b."ApprovedAt", r."ReturnDate", r."ReturnReason", r."ConditionNote"
+      FROM "BorrowRequests" AS b
+      INNER JOIN "Users" AS u ON b."BorrowerId" = u."Id"
+      INNER JOIN "Equipment" AS e ON b."EquipmentId" = e."Id"
+      LEFT JOIN "ReturnRecords" AS r ON b."Id" = r."BorrowId"
+      ORDER BY b."CreatedAt" DESC
+info: EquipmentBorrow.API.Services.BorrowService[0]
+      ดึงรายการยืมสำเร็จ Count=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: EquipmentBorrow.API.Services.BorrowService[0]
+      เริ่มดึงรายการยืม Role=admin UserId=2e63c50c-dc41-4d7f-8fc2-b0822841bbd7
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT b."Id", b."RequestCode", u."FullName" AS "Borrower", e."Name" AS "EquipmentName", b."BorrowDate", b."ExpectedReturn", b."Status", b."Notes", b."ApprovedAt", r."ReturnDate", r."ReturnReason", r."ConditionNote"
+      FROM "BorrowRequests" AS b
+      INNER JOIN "Users" AS u ON b."BorrowerId" = u."Id"
+      INNER JOIN "Equipment" AS e ON b."EquipmentId" = e."Id"
+      LEFT JOIN "ReturnRecords" AS r ON b."Id" = r."BorrowId"
+      ORDER BY b."CreatedAt" DESC
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: EquipmentBorrow.API.Services.BorrowService[0]
+      ดึงรายการยืมสำเร็จ Count=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      เริ่มดึงรายการพนักงาน
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT u."Id", u."Username", u."FullName", u."EmployeeCode", u."Department", u."Role"
+      FROM "Users" AS u
+      WHERE u."IsActive"
+      ORDER BY u."FullName"
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      ดึงรายการพนักงานสำเร็จ Count=3
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      เริ่มดึงรายการพนักงาน
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT u."Id", u."Username", u."FullName", u."EmployeeCode", u."Department", u."Role"
+      FROM "Users" AS u
+      WHERE u."IsActive"
+      ORDER BY u."FullName"
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      ดึงรายการพนักงานสำเร็จ Count=3
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: EquipmentBorrow.API.Services.BorrowService[0]
+      เริ่มดึงรายการยืม Role=admin UserId=2e63c50c-dc41-4d7f-8fc2-b0822841bbd7
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT b."Id", b."RequestCode", u."FullName" AS "Borrower", e."Name" AS "EquipmentName", b."BorrowDate", b."ExpectedReturn", b."Status", b."Notes", b."ApprovedAt", r."ReturnDate", r."ReturnReason", r."ConditionNote"
+      FROM "BorrowRequests" AS b
+      INNER JOIN "Users" AS u ON b."BorrowerId" = u."Id"
+      INNER JOIN "Equipment" AS e ON b."EquipmentId" = e."Id"
+      LEFT JOIN "ReturnRecords" AS r ON b."Id" = r."BorrowId"
+      ORDER BY b."CreatedAt" DESC
+info: EquipmentBorrow.API.Services.BorrowService[0]
+      ดึงรายการยืมสำเร็จ Count=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.BorrowService[0]
+      เริ่มดึงรายการยืม Role=admin UserId=2e63c50c-dc41-4d7f-8fc2-b0822841bbd7
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT b."Id", b."RequestCode", u."FullName" AS "Borrower", e."Name" AS "EquipmentName", b."BorrowDate", b."ExpectedReturn", b."Status", b."Notes", b."ApprovedAt", r."ReturnDate", r."ReturnReason", r."ConditionNote"
+      FROM "BorrowRequests" AS b
+      INNER JOIN "Users" AS u ON b."BorrowerId" = u."Id"
+      INNER JOIN "Equipment" AS e ON b."EquipmentId" = e."Id"
+      LEFT JOIN "ReturnRecords" AS r ON b."Id" = r."BorrowId"
+      ORDER BY b."CreatedAt" DESC
+info: EquipmentBorrow.API.Services.BorrowService[0]
+      ดึงรายการยืมสำเร็จ Count=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.ReturnService[0]
+      เริ่มดึงรายการรอคืนอุปกรณ์
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      เริ่มดึงรายการพนักงาน
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT u."Id", u."Username", u."FullName", u."EmployeeCode", u."Department", u."Role"
+      FROM "Users" AS u
+      WHERE u."IsActive"
+      ORDER BY u."FullName"
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      ดึงรายการพนักงานสำเร็จ Count=3
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT b."Id", b."RequestCode", b."BorrowerId", u."FullName" AS "Borrower", e."Name" AS "EquipmentName", b."BorrowDate", b."ExpectedReturn", b."Status"
+      FROM "BorrowRequests" AS b
+      INNER JOIN "Users" AS u ON b."BorrowerId" = u."Id"
+      INNER JOIN "Equipment" AS e ON b."EquipmentId" = e."Id"
+      WHERE b."Status" = 'approved'
+      ORDER BY b."BorrowDate"
+info: EquipmentBorrow.API.Services.ReturnService[0]
+      ดึงรายการรอคืนสำเร็จ Count=0
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      เริ่มดึงรายการพนักงาน
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT u."Id", u."Username", u."FullName", u."EmployeeCode", u."Department", u."Role"
+      FROM "Users" AS u
+      WHERE u."IsActive"
+      ORDER BY u."FullName"
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      ดึงรายการพนักงานสำเร็จ Count=3
+info: EquipmentBorrow.API.Services.ReturnService[0]
+      เริ่มดึงรายการรอคืนอุปกรณ์
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT b."Id", b."RequestCode", b."BorrowerId", u."FullName" AS "Borrower", e."Name" AS "EquipmentName", b."BorrowDate", b."ExpectedReturn", b."Status"
+      FROM "BorrowRequests" AS b
+      INNER JOIN "Users" AS u ON b."BorrowerId" = u."Id"
+      INNER JOIN "Equipment" AS e ON b."EquipmentId" = e."Id"
+      WHERE b."Status" = 'approved'
+      ORDER BY b."BorrowDate"
+info: EquipmentBorrow.API.Services.ReturnService[0]
+      ดึงรายการรอคืนสำเร็จ Count=0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      เริ่มดึงรายการพนักงาน
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT u."Id", u."Username", u."FullName", u."EmployeeCode", u."Department", u."Role"
+      FROM "Users" AS u
+      WHERE u."IsActive"
+      ORDER BY u."FullName"
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      ดึงรายการพนักงานสำเร็จ Count=3
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      เริ่มดึงรายการพนักงาน
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT u."Id", u."Username", u."FullName", u."EmployeeCode", u."Department", u."Role"
+      FROM "Users" AS u
+      WHERE u."IsActive"
+      ORDER BY u."FullName"
+info: EquipmentBorrow.API.Controllers.EmployeeController[0]
+      ดึงรายการพนักงานสำเร็จ Count=3
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      เริ่มดึงรายการอุปกรณ์ทั้งหมด
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Code", e."Name", e."Model", e."CategoryId", e0."Name" AS "CategoryName", e."TotalQuantity", e."AvailableQty", e."Status", e."Description"
+      FROM "Equipment" AS e
+      LEFT JOIN "EquipmentCategories" AS e0 ON e."CategoryId" = e0."Id"
+      ORDER BY e."Code"
+info: EquipmentBorrow.API.Services.EquipmentService[0]
+      ดึงรายการอุปกรณ์สำเร็จ จำนวน=5
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      เริ่มดึงรายการประเภทอุปกรณ์ทั้งหมด
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT e."Id", e."Name", e."Description", e."CreatedAt"
+      FROM "EquipmentCategories" AS e
+      ORDER BY e."Name"
+info: EquipmentBorrow.API.Services.EquipmentCategoryService[0]
+      ดึงรายการประเภทอุปกรณ์สำเร็จ จำนวน=4
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int64), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = Guid), @p9='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SystemUsageLogs" ("Id", "CreatedAt", "Detail", "DurationMs", "Method", "Path", "Role", "StatusCode", "UserId", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
