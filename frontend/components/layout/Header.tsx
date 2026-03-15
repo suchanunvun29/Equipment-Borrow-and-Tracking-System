@@ -37,19 +37,6 @@ export function Header() {
       </div>
 
       <div className="flex items-center gap-3">
-        <div className="hidden md:flex items-center gap-1 mr-4">
-          <button className="p-2.5 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-xl transition-all">
-            <HelpCircle className="w-5 h-5" />
-          </button>
-          <button className="p-2.5 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-xl transition-all">
-            <Settings className="w-5 h-5" />
-          </button>
-          <button className="p-2.5 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-xl transition-all relative">
-            <Bell className="w-5 h-5" />
-            <span className="absolute top-2.5 right-2.5 w-2 h-2 bg-orange-500 rounded-full border-2 border-surface"></span>
-          </button>
-        </div>
-
         <div className="h-8 w-[1px] bg-slate-200 mx-2 hidden md:block"></div>
 
         <button className="flex items-center gap-3 pl-2 pr-1 py-1 rounded-2xl hover:bg-white hover:shadow-sm border border-transparent hover:border-slate-100 transition-all group">
